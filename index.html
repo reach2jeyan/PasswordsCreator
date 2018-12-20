@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+
+<html>
+<body background="#007FFF">
+  <head>
+    <meta charset="UTF-8">
+    <title>Password Creator</title>
+  </head>
+  <body>
+    <h1>Password Creator</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <form>
+        
+        Enter Password: <input type="text" id="enterpassword">
+        <input type="submit" id="passwordsubmit" value="Create new Password" onclick="generatepassword()">
+        Generated password: <input type="text" id="generatedpassword">
+        
+    
+  
+
+    </form>
+
+    
+
+
+    <script>
+
+      // You can also require other files to run in this process
+      function generatepassword() {
+        var fetchpassword = document.getElementById("enterpassword").value
+        if (fetchpassword == null || fetchpassword.trim() == "") {
+          alert("You have not entered");
+
+        }
+        else {
+          var array = fetchpassword.split(" ");
+          array = shuffle(array);
+          var shuffledpassword = array.tostring();
+          alert(shufflepassword);
+
+        }
+      }
+      function shufflepassword() {
+        
+        
+      }
+
+  
+  
+
+
+
+
+    </script>
+  </body>
+</html>
