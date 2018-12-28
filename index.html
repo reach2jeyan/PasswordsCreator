@@ -2,24 +2,41 @@
 <!DOCTYPE html>
 
 <html>
-<body background="#007FFF">
+<body>
   <head>
     <meta charset="UTF-8">
     <title>Password Creator</title>
   </head>
   <body>
-    <h1>Password Creator</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    <form>
-        
-        Enter Password: <input type="text" id="enterpassword">
-        <input type="submit" id="passwordsubmit" value="Create new Password" onclick="generatepassword()">
-        Generated password: <input type="text" id="generatedpassword">
-        
     
-  
+    <form id="vaidationdropdown">
+      I want to: <select name="Select what you want to do">
+        <option value="Change existing password?">Change existing password</option>
+        <option value="Create New Password?">Create New Password</option>
+      </select>
+      <input type="submit" value="Go" id="Dropdownvalidate">
+    </form><br>
+
+
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <form id="existingpassword">
+        
+        Existing password is: <input type="text" id="enterpassword" placeholder="Paste existing password">
+        changed to: <input type="text" id="generatedpassword"> 
+        <input type="submit" value="Copy" id="copychangedpassword">
+    </form><br>
+
+    <form id="newpassword">
+      I want my new password to be: 
+      <input type="radio" name="strong" value="strong">Strong
+      <input type="radio" name="casual" value="light">Light
+      <input type="submit" value="Generate Password" id="generatepassword"><br><br>
+      Your generated password is: <input type="text" id="generatedpassword">
+      <input type="submit" value="Copy" id="copynewpassword">
 
     </form>
+
+
 
     
 
