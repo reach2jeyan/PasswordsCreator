@@ -10,65 +10,50 @@
   <body>
     
     <form id="vaidationdropdown">
-      I want to: <select name="Select what you want to do">
+      I want to: <select name="Select what you want to do" id="fetchdropdownvalue">
+        <option value=" " disabled selected>Select what you want to do</option>
         <option value="Change existing password?">Change existing password</option>
         <option value="Create New Password?">Create New Password</option>
       </select>
-      <input type="submit" value="Go" id="Dropdownvalidate">
+      <input type="button" value="Go" id="Dropdownvalidate" onclick="hideshowpassword()">
     </form><br>
 
 
     <!-- All of the Node.js APIs are available in this renderer process. -->
-    <form id="existingpassword">
-        
+    <form id="existingpassword" style="display:none">
         Existing password is: <input type="text" id="enterpassword" placeholder="Paste existing password">
         changed to: <input type="text" id="generatedpassword"> 
-        <input type="submit" value="Copy" id="copychangedpassword">
-    </form><br>
+        <input type="button" value="Copy" id="copychangedpassword"><br>
+      </form> 
+      <form id="newpassword" style="display:none">
+          I want my new password to be: 
+          <input type="radio" name="strong" value="strong">Strong
+          <input type="radio" name="casual" value="light">Light
+          <input type="submit" value="Generate Password" id="generatepassword"><br><br>
+          Your generated password is: <input type="text" id="generatedpassword">
+          <input type="submit" value="Copy" id="copynewpassword">
+      </form>
+      <script src="renderer.js">
+          getdropdownstatus();
+          </script>
+      </body>
+    </html>
+        
 
-    <form id="newpassword">
-      I want my new password to be: 
-      <input type="radio" name="strong" value="strong">Strong
-      <input type="radio" name="casual" value="light">Light
-      <input type="submit" value="Generate Password" id="generatepassword"><br><br>
-      Your generated password is: <input type="text" id="generatedpassword">
-      <input type="submit" value="Copy" id="copynewpassword">
+        
+    
+    
 
-    </form>
+    
 
+    
+    
 
 
     
 
 
-    <script>
-
-      // You can also require other files to run in this process
-      function generatepassword() {
-        var fetchpassword = document.getElementById("enterpassword").value
-        if (fetchpassword == null || fetchpassword.trim() == "") {
-          alert("You have not entered");
-
-        }
-        else {
-          var array = fetchpassword.split(" ");
-          array = shuffle(array);
-          var shuffledpassword = array.tostring();
-          alert(shufflepassword);
-
-        }
-      }
-      function shufflepassword() {
-        
-        
-      }
-
-  
-  
 
 
 
 
-    </script>
-  </body>
-</html>
