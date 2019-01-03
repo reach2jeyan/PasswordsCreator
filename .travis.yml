@@ -15,7 +15,6 @@ addons:
 
 # A list of operating systems which are used for tests
 os:
-  - linux
   - osx
   - windows
 env:
@@ -29,6 +28,3 @@ cache:
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
     - $HOME/.npm/_prebuilds
-
-before_cache:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm -rf $HOME/.cache/electron-builder/wine; fi
