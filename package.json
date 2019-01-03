@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "mocha"
   },
   "repository": "https://github.com/reach2jeyan/PasswordsCreator",
   "keywords": [
@@ -14,7 +15,12 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.7"
-  
+    "@types/mocha": "2.2.43",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "electron": "^3.0.7",
+    "electron-chromedriver": "1.7.1",
+    "mocha": "3.5.3",
+    "spectron": "^3.7.2"
   }
 }
