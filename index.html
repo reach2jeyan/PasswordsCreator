@@ -12,8 +12,8 @@
     <form id="vaidationdropdown">
       I want to: <select name="Select what you want to do" id="fetchdropdownvalue">
         <option value=" " disabled selected>Select what you want to do</option>
-        <option value="Change existing password?">Change existing password</option>
-        <option value="Create New Password?">Create New Password</option>
+        <option value="Change existing password?" id="existingpasswordchoice">Change existing password</option>
+        <option value="Create New Password?" id="newpasswordchoice">Create New Password</option>
       </select>
       <input type="button" value="Go" id="Dropdownvalidate" onclick="hideshowpassword()">
     </form><br>
@@ -22,19 +22,19 @@
     <!-- All of the Node.js APIs are available in this renderer process. -->
     <form id="existingpassword" style="display:none">
         Existing password is: <input type="text" id="enterpassword" placeholder="Paste existing password">
-        changed to: <input type="text" id="generatedpassword"> 
+        changed to: <input type="text" id="generatedpassword" readonly="true"> 
         <input type="button" value="Copy" id="copychangedpassword"><br>
       </form> 
       <form id="newpassword" style="display:none">
           I want my new password to be: 
-          <input type="radio" name="strong" value="strong">Strong
-          <input type="radio" name="casual" value="light">Light
-          <input type="submit" value="Generate Password" id="generatepassword"><br><br>
-          Your generated password is: <input type="text" id="generatedpassword">
+          <input type="radio" id="strongpassword" name="strong" value="strong">Strong
+          <input type="radio" id="lightpassword" name="strong" value="light">Light
+          <input type="button" value="Generate Password" id="generatepassword" onclick="newpassword()"><br><br>
+          Your generated password is: <input type="text" value="generatedpassword" id="generatedpassword" readonly="true">
           <input type="submit" value="Copy" id="copynewpassword">
       </form>
       <script src="renderer.js">
-          getdropdownstatus();
+          
           </script>
       </body>
     </html>
