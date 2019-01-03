@@ -1,0 +1,30 @@
+osx_image: xcode10.1 # define OS X image which will be mounted
+
+dist: trusty # use Ubuntu Trusty for Linux operation system
+
+# Note: if you switch to sudo: false, you'll need to launch chrome with --no-sandbox.
+# See https://github.com/travis-ci/travis-ci/issues/8836
+sudo: required
+
+# Define Node.js as the programming language as we have a web application
+language: node_js
+node_js: '8.12.0'
+
+addons:
+  chrome: stable # Install chrome stable on operating systems
+
+# A list of operating systems which are used for tests
+os:
+  - osx
+  - windows
+env:
+  global:
+    - ELECTRON_CACHE=$HOME/.cache/electron
+    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
+cache:
+  yarn: true
+  directories:
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
+    - $HOME/.npm/_prebuilds
