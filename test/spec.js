@@ -2,6 +2,7 @@ const Application = require('spectron').Application
 const assert = require('assert')
 const electronPath = require('electron') // Require Electron from the binaries included in node_modules.
 const path = require('path')
+
  
 describe('Application launch', function () {
   this.timeout(10000)
@@ -31,4 +32,5 @@ describe('Application launch', function () {
         console.log('The #fetchdropdownvalue text content is ' + dropdowntext)
       })
   })
+  
 })

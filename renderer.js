@@ -5,6 +5,33 @@ var fetchStatus;
 function getdropdownstatus() {
   fetchStatus = document.getElementById("fetchdropdownvalue").value;
 }
+var passwordType;
+function getpasswordtype() {
+  if (document.getElementById("strongpassword").checked) {
+    passwordType = generatePassword(9,"aAcCdeFfhjGLk1958!@#$");
+    var result = document.getElementById("newpassword").elements[3];
+    result.value = passwordType;
+    
+    
+  }
+  else if (document.getElementById("lightpassword").checked) {
+    passwordType = generatePassword(8,"abmnhjilk1958");
+    var result = document.getElementById("newpassword").elements[3];
+    result.value = passwordType;
+    
+  }
+  else {
+    alert("Select atleast one type")
+  }
+}
+function generatePassword(len,characters) {
+  var text = "";
+  var strongcharset = characters
+  for (var i = 0; i < len; i++)
+  text += strongcharset.charAt(Math.floor(Math.random() * strongcharset.length));
+  return text;
+}
+
 function hideshowpassword() {
   getdropdownstatus()
   if (fetchStatus == "Change existing password?") {
@@ -18,6 +45,8 @@ function hideshowpassword() {
   else {
     alert("Please choose any one action below")
   }
+}
 
-  }
-
+function newpassword() {
+  getpasswordtype()
+}
