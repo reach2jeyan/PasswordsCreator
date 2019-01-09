@@ -4,7 +4,10 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app",
+    "pack": "build --dir",
+    "dist": "build",
     "test": "mocha"
   },
   "repository": "https://github.com/reach2jeyan/PasswordsCreator",
@@ -19,6 +22,7 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "electron": "^3.0.7",
+    "electron-builder": "^20.38.4",
     "electron-chromedriver": "1.7.1",
     "mocha": "3.5.3",
     "spectron": "^3.7.2"
