@@ -50,3 +50,34 @@ function hideshowpassword() {
 function newpassword() {
   getpasswordtype()
 }
+
+
+function copytoclipboard(element) {
+  //var copyText = document.getElementById("generatedpassword").value;
+  //let idTest = document.getElementsByName("copypassword").value;
+  switch(element) {
+    case "Copy Changed password":
+    var copyText = document.getElementById("changedpassword").value;
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+    break;
+    case "Copy generated password":
+    var copyText = document.getElementById("generatedpassword").value;
+    clipboard.readText([copyText])
+    //copyText.select();
+    //document.execCommand("copy")
+    alert("Copied the text: " + copyText);
+    
+    break;
+    default:
+    alert("Something wrong. Try again")
+  }
+
+
+
+
+
+
+
+  }
+  

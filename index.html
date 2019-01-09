@@ -22,8 +22,8 @@
     <!-- All of the Node.js APIs are available in this renderer process. -->
     <form id="existingpassword" style="display:none">
         Existing password is: <input type="text" id="enterpassword" placeholder="Paste existing password">
-        changed to: <input type="text" id="generatedpassword" readonly="true"> 
-        <input type="button" value="Copy" id="copychangedpassword"><br>
+        changed to: <input type="text" id="changedpassword" readonly="true" > 
+        <input type="button" name="copypassword" value="Copy Changed password" id="copynewpassword" onclick="copytoclipboard(this.value)"><br>
       </form> 
       <form id="newpassword" style="display:none">
           I want my new password to be: 
@@ -31,7 +31,7 @@
           <input type="radio" id="lightpassword" name="strong" value="light">Light
           <input type="button" value="Generate Password" id="generatepassword" onclick="newpassword()"><br><br>
           Your generated password is: <input type="text" value=" " id="generatedpassword" readonly="true">
-          <input type="submit" value="Copy" id="copynewpassword">
+          <input type="button" name="copypassword" value="Copy generated password" id="copygeneratedpassword" onclick="copytoclipboard(this.value)">
       </form>
       <script src="renderer.js">
           
