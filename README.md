@@ -1,5 +1,7 @@
 # Password Creator
 
+[![Build Status](https://travis-ci.org/reach2jeyan/PasswordsCreator.svg?branch=master)](https://travis-ci.org/reach2jeyan/PasswordsCreator)
+
 This desktop and Mac application is built on elektron JS to allow you to quickly either create new password or shuffle the existing password without spending much time to think about it.
 
 Functionality:
