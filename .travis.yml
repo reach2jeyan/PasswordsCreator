@@ -27,3 +27,10 @@ cache:
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
     - $HOME/.npm/_prebuilds
+deploy:
+  provider: releases
+  api_key: "6ab423d17fa407972051faebb00d6105ef385fa6"
+  file: ""dist/passwordscreator*-x86_64.exe""
+  skip_cleanup: true
+  on:
+    tags: true
