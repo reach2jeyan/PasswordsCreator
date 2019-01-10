@@ -1,36 +1,26 @@
-osx_image: xcode10.1 # define OS X image which will be mounted
-
-dist: trusty # use Ubuntu Trusty for Linux operation system
-
-# Note: if you switch to sudo: false, you'll need to launch chrome with --no-sandbox.
-# See https://github.com/travis-ci/travis-ci/issues/8836
+osx_image: xcode10.1
+dist: trusty
 sudo: required
-
-# Define Node.js as the programming language as we have a web application
 language: node_js
-node_js: '8.12.0'
-
+node_js: 8.12.0
 addons:
-  chrome: stable # Install chrome stable on operating systems
-
-# A list of operating systems which are used for tests
-os:
-  - windows
+  chrome: stable
+os: windows
 env:
   global:
-    - ELECTRON_CACHE=$HOME/.cache/electron
-    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-
+  - ELECTRON_CACHE=$HOME/.cache/electron
+  - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 cache:
   yarn: true
   directories:
-    - $HOME/.cache/electron
-    - $HOME/.cache/electron-builder
-    - $HOME/.npm/_prebuilds
+  - "$HOME/.cache/electron"
+  - "$HOME/.cache/electron-builder"
+  - "$HOME/.npm/_prebuilds"
 deploy:
   provider: releases
-  api_key: "6ab423d17fa407972051faebb00d6105ef385fa6"
-  file: ""dist/passwordscreator*-x86_64.exe""
-  skip_cleanup: true
+  api_key:
+    secure: FouILvfCHG+swHd7JmtH+yamYI4D5F066CsJrgGCPFEP6SlpDYEebL/3ZqTScjKIB9SDZPAwlCDNCw0XtB5SspndPG9ccTVYPnj3CccqGKoTzOZgiRrKudVucar36pxK61u1Cbq80T9CpHAdlidTN6ZWUjNI1fgpCOwPY6ARCjR38702ZFuaQqaJJ89R1lB+H3ICzB47NkCCoSSzsrz4TdBY22yfxZn4AcyJfEarMvms313C45LRj44X9G5QtaaDKHRb+mTzYzpmMTinz05PsA81ymqNAxbfRuFFy9A08ElwoC0gdE0wSS7KBjpi+vtfkCfmBDjE02dtHtMhlrC2KSsj1WAd9kwwmJkoCoyduOx0ezYkVXcewrUuyffnGgTbEM8oAoxDtCgI3GygQcrXWuJK74+AhBJU5NPdEygO5kZXcz5hkDX88b4hySVUnkY9Pfx5IaNEMymdRBzd0MiswaNt2EFdngwnJJegz8GAgOrQVKN3gc0C1bNyjhjK7SCckNkxKlKUjOb8hXY0PMQYtLfBdRYhhliuBmT5USG+TCn5XFOWXiAjuufH455Yz5kXkKKQVY+VmBsdJMHV3nTDUyw3jcp5QTd2FZkBOlzn25XHX2oWiFFvYwqA3aPM90cN1HeFsr4KVakKLAnb900cBPhiNKGxNuGiK0ajMmBnQ0A=
+  file: '"dist\passwordscreator Setup 0.0.1.exe"'
   on:
-    tags: true
+    repo: reach2jeyan/PasswordsCreator
+    branch: autodeploy
