@@ -15,7 +15,6 @@ script:
   - npm run dist
 
 deploy:
-  file_glob: true
   skip_cleanup: true
   provider: releases
   api_key:
