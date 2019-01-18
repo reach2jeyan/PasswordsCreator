@@ -1,21 +1,11 @@
 # Password Creator
 
-This desktop and Mac application is built on elektron JS to allow you to quickly either create new password or shuffle the existing password without spending much time to think about it.
+[![Build Status](https://travis-ci.org/reach2jeyan/PasswordsCreator.svg?branch=master)](https://travis-ci.org/reach2jeyan/PasswordsCreator)
 
-Functionality:
-#New Password
-1. This will give you a random password either with your name or jumble of alphabets and numbers with special characters
+Just a basic electron JS app to better understand development to deployment cycle.
 
-#Existing Password
-1. This will reshuffle your current password so that you can use the same password again in case of reset.
+1. Includes Dev
+2. Spec tests and UI automated tests using spectron
+3. CI/CD integration with travis
+4. Auto deploy release file
 
-How to use it
-#Windows
-1. Install the exe file and follow windows installation process
-
-#Mac
-1. Drag the application file to the application folder and this will appear in the finder.
-
-#Contribute?
-
-I would love to have new features on this. Fork, Create a branch and raise a PR.
