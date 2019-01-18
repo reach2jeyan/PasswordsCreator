@@ -13,6 +13,7 @@ env:
 
 script:
   - npm run dist
+  - ls
 deploy:
   skip_cleanup: true
   provider: releases
