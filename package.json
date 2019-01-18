@@ -7,7 +7,7 @@
     "postinstall": "install-app-deps",
     "start": "npm install && electron .",
     "pack": "build --dir",
-    "dist": "build",
+    "dist": "electron-builder --publish never",
     "test": "mocha"
   },
   "repository": "https://github.com/reach2jeyan/PasswordsCreator",
