@@ -23,5 +23,5 @@ deploy:
   name: PasswordCreator $(date +'%d.%m.%Y %R')
   on:
     repo: reach2jeyan/PasswordsCreator
-    branch: autodeploy
+    branch: master
 
