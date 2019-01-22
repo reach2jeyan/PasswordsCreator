@@ -1,36 +1,42 @@
-const Application = require('spectron').Application
-const assert = require('assert')
-const electronPath = require('electron') // Require Electron from the binaries included in node_modules.
-const path = require('path')
+const Application = require('spectron').Application;
+const path = require('path');
+var assert = require('assert')
 
- 
-describe('Application launch', function () {
-  this.timeout(10000)
- 
-  beforeEach(function () {
-    this.app = new Application({
-      path: electronPath,
-      args: [path.join(__dirname, '..')]
-    })
-    return this.app.start()
-  })
- 
-  afterEach(function done() {
-    if (this.app && this.app.isRunning()) {
-      return this.app.stop()
-    }
-  })
- 
-  it('shows an initial window', function done() {
-    return this.app.client.getWindowCount().then(function (count) {
-      assert.equal(count, 1)
 
+
+var electronPath = path.join(__dirname, '..', 'node_modules', '.bin', 'electron');
+var appPath = path.join(__dirname, '..');
+
+if (process.platform === 'win32') {
+    electronPath += '.cmd';
+}
+
+console.log(electronPath)
+console.log(appPath)
+
+
+
+
+describe('application launch', function () {
+    this.timeout(10000)
+
+    before(function () {
+        this.app = new Application({
+            path: electronPath,
+            args: [appPath]
+        });
+        return this.app.start()
     })
-  })
-  it('shows initial drop down box page', function done() {
-    this.app.client.getText('#fetchdropdownvalue').then(function (dropdowntext) {
-        console.log('The #fetchdropdownvalue text content is ' + dropdowntext)
-      })
-  })
-  
+
+    after(function () {
+        if (this.app && this.app.isRunning()) {
+            return this.app.stop()
+        }
+    })
+
+    it('shows an initial window', function () {
+        return this.app.client.getWindowCount().then(function (count) {
+            assert.equal(count, 1)
+        })
+    })
 })

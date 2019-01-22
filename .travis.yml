@@ -11,6 +11,7 @@ env:
   - ELECTRON_CACHE=$HOME/.cache/electron
   - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 script:
+- npm run test
 - npm run dist
 deploy:
   provider: releases
