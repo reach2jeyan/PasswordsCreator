@@ -1,13 +1,13 @@
 {
   "name": "passwordscreator",
+  "version": "1.0.0",
   "description": "A minimal Electron application",
-  "version": "0.0.1",
   "main": "main.js",
   "scripts": {
     "postinstall": "install-app-deps",
-    "start": "npm install && electron .",
+    "start": "npm install && electron ./app",
     "pack": "build --dir",
-    "dist": "electron-builder --publish never",
+    "dist": "build",
     "test": "mocha"
   },
   "repository": "https://github.com/reach2jeyan/PasswordsCreator",
